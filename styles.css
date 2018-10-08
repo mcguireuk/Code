@@ -1,0 +1,162 @@
+@-webkit-keyframes show {
+     0% {
+        opacity: 0;
+    }
+     100% {
+        opacity: 1;
+    }
+}
+ @keyframes show {
+     0% {
+        opacity: 0;
+    }
+     100% {
+        opacity: 1;
+    }
+}
+ .showfade {
+     -webkit-animation: show 3s;
+             animation: show 3s;
+     -webkit-animation-fill-mode: forwards;
+             animation-fill-mode: forwards;
+             #a90010 10%, black 55%
+}
+ .container-fluid{
+     background: -webkit-gradient(linear, left top, left bottom, from(#a90010 10%), color-stop(55%, black)), url('20180325_132120.jpg') 70% 35%;
+     background: -webkit-linear-gradient(#a90010 10%, black 55%), url('20180325_132120.jpg') 70% 35%;
+     background: -o-linear-gradient(#a90010 10%, black 55%), url('20180325_132120.jpg') 70% 35%;
+     background: linear-gradient(#a90010 10%, black 55%), url('20180325_132120.jpg') 70% 35%;
+     background-repeat: no-repeat;
+     background-position: top;
+     background-size: cover;
+     background-blend-mode: multiply;
+     height: 100%;
+     width: 100%;
+}
+ .container {
+     min-width: 80%;
+}
+ .black {
+     background-color: black;
+}
+ .top-left {
+     position: relative;
+     left: 0;
+}
+ .gothic {
+     font-family: league gothic;
+     font-style: normal;
+     color: whitesmoke;
+}
+ a {
+     color: #212529;
+}
+ a:hover{
+     color: #414549;
+     font-style: normal;
+     text-decoration: none;
+}
+ a.nav {
+     color: whitesmoke;
+     font-style: normal;
+     display: inline-block;
+}
+ a.nav:hover{
+     color: rgb(177, 27, 27);
+     font-style: normal;
+     display: inline-block;
+     text-shadow: 4px 0px 20px rgb(255, 25, 25);
+}
+ span{
+     font-size-adjust: auto;
+}
+ label {
+     font-family: league gothic;
+     font-variant: small-caps;
+     color: whitesmoke;
+     font-size: 2em;
+     font-style: oblique;
+}
+ .white{
+     background-color: whitesmoke;
+}
+ .header{
+     font-family: league gothic;
+     font-variant: small-caps;
+     color: whitesmoke;
+     font-size: 15vw;
+     font-style: oblique;
+     text-shadow: 15px 15px 50px black;
+}
+ .header-small {
+     font-family: league gothic;
+     font-variant: small-caps;
+     color: whitesmoke;
+     font-size: 6em;
+     font-style: oblique;
+     text-shadow: 15px 15px 50px black;
+}
+ .footer{
+     
+     color: whitesmoke;
+     font-family: League Gothic;
+     font-style: oblique;
+}
+ .card-body-large{
+     font-family: league gothic;
+     font-style: oblique;
+     text-shadow: 15px 15px 50px grey;
+}
+ .card-text-large{
+     font-family: league gothic;
+     font-style: oblique;
+     text-shadow: 15px 15px 50px grey;
+}
+ .shadow{
+     -webkit-box-shadow: 0px 20px 100px rgba(177, 27, 27, 0.88);
+             box-shadow: 0px 20px 100px rgba(177, 27, 27, 0.88);
+}
+ .card-shadow{
+     -webkit-box-shadow: 0px 5px 30px 5px rgba(186, 65, 65, 0.45);
+             box-shadow: 0px 5px 30px 5px rgba(186, 65, 65, 0.45);
+}
+ @media screen and (max-width: 600px) {
+     div.card-text-large {
+         font-size:6vw;
+    }
+}
+ @media screen and (min-width: 768px) {
+     div.card-text-large {
+         font-size:3vw;
+    }
+}
+ @media screen and (min-width: 1024px) {
+     div.card-text-large {
+         font-size:3vw;
+    }
+}
+ @media screen and (min-width: 1440px) {
+     div.card-text-large {
+         font-size:2vw;
+    }
+}
+ @media screen and (max-width: 600px) {
+     div.card-body-large {
+         font-size:15vw;
+    }
+}
+ @media screen and (min-width: 768px) {
+     div.card-body-large {
+         font-size:12vw;
+    }
+}
+ @media screen and (min-width: 1024px) {
+     div.card-body-large {
+         font-size:10vw;
+    }
+}
+ @media screen and (min-width: 1440px) {
+     div.card-body-large {
+         font-size:14vw;
+    }
+}

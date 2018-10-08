@@ -1,0 +1,146 @@
+.photog-container{
+ padding-left:1%; 
+ padding-right:1%;
+}
+.photog-top-image, .photog-middle, .photog-middle-2, .photog-middle-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(top.jpg);
+  text-align: center;
+  font-family: monaco, monospace;
+    height: 500px;
+}
+.photog-middle {
+    background-image: url(middle.jpg);
+    height: 400px;
+    }
+.photog-middle-2 {
+    background-image: url(20170820_154106.jpg);
+    height: 400px;
+    }
+ .photog-middle-3 {
+    background-image: url(middle2.jpg);
+    height: 400px;
+    }
+h1, h2 {
+  display: inline-block;
+  background: #fff;
+}
+.photog-logo {
+position: sticky;
+margin:auto;
+top: 35%;
+padding:2%;
+background-color: #444;
+opacity: 0.65;
+color: #eee;
+z-index:0;
+
+}
+h2 {
+  font-size: 20px;
+}
+span {
+  background: #fd0;
+}
+ul.photog-navbar {
+    position: sticky;
+    top: 0;
+ list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ background-color: #444;
+ z-index:1;
+}
+ul.photog-navbar-switch{
+     position: sticky;
+    top: 0;
+ list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ background-color: #444;
+ z-index:1;
+    }
+ul.photog-navbar li, ul.photog-navbar-switch li {
+ color: #eee;
+    width: auto;
+text-align: center;
+font-family: monaco, monospace;
+}
+ul.photog-navbar li a {
+display: block; 
+padding: 14px 16px;
+}
+ul.photog-navbar li.smp a, ul.photog-navbar li.smp a:hover {
+ background-color: #444;
+ color:#eee;
+}
+ul.photog-navbar li a:link, ul.photog-navbar li a:visited, ul.photog-navbar-switch li a:link, ul.photog-navbar-switch li a:visited {
+    color: #eee;
+    text-decoration: none;
+}
+ul.photog-navbar li a:hover, ul.photog-navbar li a:active, ul.photog-navbar-switch li a:hover, ul.photog-navbar-switch li a:active{
+    background-color: #eee;
+    color: #444;
+
+}
+.photog-footer, .photog-footer a {
+    text-align: center;
+    color: antiquewhite;
+ position: bottom;
+ width: 100%;
+ background-color: #444;
+ height: 100px;
+}
+.photog-footer a:hover{
+        color:darkgray;
+    }
+.photog-bright{
+ width:100%;
+ height:auto;
+ background-color: #eeeeee;
+ padding: 2%;    
+}
+.photog-dark{
+   width:100%;
+   height:auto;
+   background-color: #aaaaaa;
+   padding: 2%;    
+
+}
+.photog-profile {
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+}
+    #map {
+        margin: auto;
+    }
+iframe {
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    margin: auto;
+    }
+    #photogrid {
+        padding: 1%;
+    }  
+    img.pp{
+        height: 200px;
+        width: 200px;
+        object-fit:cover;
+        object-position: center;
+        }
+    padding1% {
+        padding: 2%;
+    }
+    .photog-card-header {
+        background-color:darkgray;
+    }
+    .photog-card-title-price {
+        color: cornflowerblue;
+    }

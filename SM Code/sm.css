@@ -1,0 +1,76 @@
+.container-fluid {
+    width: 95%;
+}
+
+.portfolio {
+        height: auto;
+}
+.cover {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+text-align: center;
+height: 400px;
+margin-bottom: 5%;
+}
+
+.logo{
+content=' ';
+margin: auto;
+min-width: 60%;
+background-color: #444;
+position: sticky;
+    top: 40%;
+font-family: 'Source Code Pro';
+color: #ddd;
+text-align: center;
+}
+
+.logo-h1{
+  position: sticky;
+    left: 0;
+    top: 30%;
+    margin: auto;
+    width: 60%;
+    background-color: #444;
+    text-align: center;
+    font-size: 3vmin;
+     ;   color: #ddd; 
+	border: 2px;
+	outline-style: solid;
+	outline-color: #b2b4a9;
+	outline-offset: 3px;
+}
+
+.footer{
+background-color: #444;
+width: 100%;
+padding: 45px 0;
+color: #ddd;
+text-align: center;
+}
+
+.contact {
+    padding: 2%;
+    height: auto;
+    padding: 2%;
+    background-color: #fff;
+}
+iframe {
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    margin: auto;
+    }
+    
+    #map {
+        margin: auto;
+    }
+
+.pic {
+margin: auto;
+max-width:250px;
+max-height:250px;
+object-fit: cover;
+}
