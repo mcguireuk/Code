@@ -1,12 +1,16 @@
  <html>
      <head>
+     <meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1990 12:00:00 GMT" />
          <meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
           <link href="https://fonts.googleapis.com/css?family=Comfortaa|Gothic+A1" rel="stylesheet">
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-               <link href="/league-gothic-master/webfonts/stylesheet.css" rel="stylesheet">
+               <link href="league-gothic-master/webfonts/stylesheet.css" rel="stylesheet">
 
-          <link rel="stylesheet" href="styles.css">
+          <link rel="stylesheet" href="styles.css?v=<?=time();?>"
      </head>
     <body class="black" onload="sortByValue()">
         <script>
@@ -23,6 +27,9 @@
                 
                
       </script>
+        <?php
+   include "../navbar.php";
+   ?>
         <?php
             include 'top-nav.php';
             ?>
@@ -189,9 +196,9 @@ function getMeets($address, $distance){
     
 
 $servername = "localhost";
-$username = "admin";
+$username = "smcodex1";
 $password = "228Sj9vj";
-$dbname = "meetsdb";
+$dbname = "smcodex1_meetsdb";
     
     // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -201,10 +208,10 @@ if ($conn->connect_error) {
 } 
 
 // sql to create table
-$stmt = $conn->prepare("select ridename, startpostcode, endpostcode, date, time, otherdetails, lat, lon from meets_table where meetride = 'ride' AND lat between ? AND ? AND lon between ? AND ? ORDER BY lat, lon");
+$stmt = $conn->prepare("select ridename, startpostcode, endpostcode, date, time, otherride, lat, lon from meets_table where meetride = 'ride' AND lat between ? AND ? AND lon between ? AND ? ORDER BY lat, lon");
 $stmt->bind_param("dddd", $latMinus, $latPlus, $lonMinus, $lonPlus);
     $stmt->execute();
-    $stmt->bind_result($ridename, $startpostcode, $endpostcode, $date, $time, $otherdetails, $lat, $lon);
+    $stmt->bind_result($ridename, $startpostcode, $endpostcode, $date, $time, $otherride, $lat, $lon);
     $i=1;
        
     while($stmt->fetch()){
@@ -217,7 +224,7 @@ $distance = $result->rows[0]->elements[0]->distance->text;
 $distance = str_replace(' ', '', $distance);
 
                 
-        print "<div id='" . $i . "' class='card fade show card-shadow border-dark bg-dark text-light col-sm-12 col-md-5 col-lg-4 col-xl-3 p-0 m-2'>
+        print "<div id='" . $i . "' class='card fade showfade card-shadow border-dark bg-dark text-light col-sm-12 col-md-5 col-lg-4 col-xl-3 p-0 m-2'>
         <img class='img-fluid card-img-top' src='https://maps.googleapis.com/maps/api/staticmap?center=" . $startpostcode ."&markers=" . $startpostcode ."&zoom=18&maptype=road&size=400x250&key=AIzaSyDdb3Xz1H1zldZo72Nxze0V6iYHALnRmDY'>
         <div class='card-header'>
             <h6><span id='placeName'>". ucwords($ridename) . "</span></h6>
@@ -231,7 +238,7 @@ $distance = str_replace(' ', '', $distance);
                <b>Time: </b><span id='time'>" . $time . "</span>
             </div>
             <div class='card-text'>
-               <b>Details: </b><span id='otherdetails'>" . $otherdetails . "</span>
+               <b>Details: </b><span id='otherdetail'>" . $otherride . "</span>
             </div>
             </div>
             <div class='card-footer row justify-content-between px-4'>

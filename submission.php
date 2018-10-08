@@ -1,11 +1,9 @@
-
-
  <html>
      <head>
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
           <link href="https://fonts.googleapis.com/css?family=Comfortaa|Gothic+A1" rel="stylesheet">
-               <link href="/league-gothic-master/webfonts/stylesheet.css" rel="stylesheet">
+               <link href="league-gothic-master/webfonts/stylesheet.css" rel="stylesheet">
           <link rel="stylesheet" href="styles.css">
          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -13,6 +11,9 @@
      </head>
      
     <body class="black">
+     <?php
+   include "../navbar.php";
+   ?>
         <?php 
         include 'top-nav.php'; 
         ?>
@@ -72,9 +73,9 @@ function test_input($data) {
 
 function addSubmission($name, $email, $tel, $venue, $street, $town, $postcode, $meetride, $frequency, $dayofweek, $dayofmonth, $othermeet, $timeofday, $otherdetail, $startpostcode, $endpostcode, $ridename, $date, $time, $otherride){
 $servername = "localhost";
-$username = "admin";
+$username = "smcodex1";
 $password = "228Sj9vj";
-$dbname = "meetsdb";
+$dbname = "smcodex1_meetsdb";
     
  global $lat, $lon;
     
@@ -130,7 +131,7 @@ $conn->close();
     </div>
     <div class="form-row justify-content-center">
         <div class="col-auto mt-2">
-                    <div class="form-check-inline py-1">Meet or Ride: 
+                    <div class="form-check-inline py-1"><label class="form-check-label">Meet or Ride: </label>
                     <input class="form-check-input m-1" type="radio" name="meetride" value="meet"/><label class="form-check-label">Meet</label>
  					<input class="form-check-input m-1" type="radio" name="meetride" value="ride"/><label class="form-check-label">Ride</label>
                     </div>

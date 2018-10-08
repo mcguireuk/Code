@@ -1,14 +1,12 @@
-
-
  <html>
      <head>
          <meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
           <link href="https://fonts.googleapis.com/css?family=Comfortaa|Gothic+A1" rel="stylesheet">
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-               <link href="/league-gothic-master/webfonts/stylesheet.css" rel="stylesheet">
+               <link href="league-gothic-master/webfonts/stylesheet.css" rel="stylesheet">
 
-          <link rel="stylesheet" href="styles.css">
+          <link rel="stylesheet" href="styles.css?v=<?=time();?>">
      </head>
     <body class="black" onload="sortByValue()">
         <script>
@@ -25,6 +23,9 @@
                 
                
       </script>
+       <?php
+   include "../navbar.php";
+   ?>
         <?php
         include 'top-nav.php';
         ?>
@@ -55,7 +56,9 @@
         }
         ?>
    <div class="container-fluid pt-3">
+   <div class="col-12 header-small text-center">Biker-Meets</div>
 <div class="navbar justify-content-center">
+
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <div class="form-inline">
                     <label for="address"><span class="text-light mr-md-2">Your Postcode: <span class="text-light mr-md-2"><?php echo $postcodeErr; ?></span></span></label>
@@ -195,9 +198,9 @@ function getMeets($address, $distance){
     
 
 $servername = "localhost";
-$username = "admin";
+$username = "smcodex1";
 $password = "228Sj9vj";
-$dbname = "meetsdb";
+$dbname = "smcodex1_meetsdb";
     
     // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -225,7 +228,7 @@ $distance = $result->rows[0]->elements[0]->distance->text;
 $distance = str_replace(' ', '', $distance);
         
         
-        print "<div id='" . $i . "' class='card show card-shadow border-dark bg-dark text-light col-sm-12 col-md-5 col-lg-4 col-xl-3 p-0 m-2'>
+        print "<div id='" . $i . "' class='card showfade card-shadow border-dark bg-dark text-light col-sm-12 col-md-5 col-lg-4 col-xl-3 p-0 m-2'>
         <img class='img-fluid card-img-top' src='https://maps.googleapis.com/maps/api/staticmap?center=" . $placeName . "," . $street . ", " . $town . ", " . $postcode ."&markers=" . $placeName . "," . $street . ", " . $town . ", " . $postcode ."&zoom=18&maptype=road&size=400x250&key=AIzaSyDdb3Xz1H1zldZo72Nxze0V6iYHALnRmDY'>
         <div class='card-header'>
             <h6><span>" . ucwords($placeName) . "</span></h6>

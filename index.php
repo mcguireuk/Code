@@ -5,11 +5,16 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
       <link href="https://fonts.googleapis.com/css?family=Comfortaa|Gothic+A1" rel="stylesheet">
-      <link href="/league-gothic-master/webfonts/stylesheet.css" rel="stylesheet">
-      <link rel="stylesheet" href="styles.css">
+      <link href="league-gothic-master/webfonts/stylesheet.css" rel="stylesheet">
+     <link rel="stylesheet" href="styles.css?v=<?=time();?>"> 
    </head>
    <body class="black">
-      
+   <?php
+   include "../navbar.php";
+   ?>
+   <?php
+        include 'top-nav.php';
+        ?>
        <div class="container-fluid">
             <div class="col-12 header text-center">Biker-Meet</div>
            <div class="container">
@@ -34,7 +39,7 @@
                       </div>
             </div>
            </div>
-           <div class="footer text-center my-5">General Disclaimer here, Public info, accept no liability for accuracy or content but will remove any listing flagged as incorrect or inappropriate.
+           <div class="footer text-center my-5">Biker-Meets accepts no liabilty for the information enclosed. The information contained within is not owed by Biker-meets. Information is provided by the public for the sole use of the public. You personal will not be used by biker-meets for other purpose than displaying your search results. We do not keep you personal details unless your are submitting ride/meet data. 
                 </div>
        </div>
                             
