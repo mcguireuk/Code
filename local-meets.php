@@ -69,7 +69,7 @@
                      
                     
                     
-        <script>function sortByValue(){
+        <script>function sortByValue(){ //details returned from SQL query aren't sorted in order. This cannot be done based on user location so this function sorts the resulting data to present logically to user. 
   var idkeyvalue = [];
   var i = 1;
   while (document.getElementById(i) != null){
