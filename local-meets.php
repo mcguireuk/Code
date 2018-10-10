@@ -162,7 +162,8 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-            
+
+//get lat,lon from postcodes.io api for user imputted postcode. data is fetched on during form validation.
 function getlatLon($address){
     global $latitude, $longitude, $result;
      
@@ -173,14 +174,14 @@ $latitude = $result['result']['latitude'];
 $longitude = $result['result']['longitude'];
 }
 
-            
+// get lat difference based on user distance. used to fetch nearby results in SQL query below.             
 function getMaxLat($address, $distance){
 $earth_radius = 3960.0;
 $radians_to_degrees = 180.0/pi();
      
 return ($distance/$earth_radius)*$radians_to_degrees;
 }  
-            
+// as above but lon.      
 function getMaxlon($address, $distance){
 global $latitude;
 $earth_radius = 3960.0;
@@ -192,7 +193,7 @@ $r = $earth_radius*cos($latitude*$degrees_to_radians);
     return ($distance/$r)*$radians_to_degrees;
      
 }
-            
+ // uses user input and calculated lat,lon above to fetch nearby results form SQL database.            
 function getMeets($address, $distance){
     global $latMinus, $latPlus, $lonMinus, $lonPlus;
     
@@ -209,7 +210,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-// sql to create table
+// sql query, and fetch.
 $stmt = $conn->prepare("select placeName, street, town, postcode, lat, lon from meets_table where meetride = 'meet' AND lat between ? AND ? AND lon between ? AND ? ORDER BY lat, lon");
 $stmt->bind_param("dddd", $latMinus, $latPlus, $lonMinus, $lonPlus);
     $stmt->execute();
@@ -219,7 +220,7 @@ $stmt->bind_param("dddd", $latMinus, $latPlus, $lonMinus, $lonPlus);
     while($stmt->fetch()){
         
     
-         
+ // get a road distance from user submitted postcode to SQL data row result.      
 $result = file_get_contents('https://maps.googleapis.com/maps/api/distancematrix/json?origins=' . urlencode($address) . '&destinations=' . urlencode($street) . ',' . urlencode($town) . '&departure_time=now&key=AIzaSyC8y8MUHQDcZQEb7PhMKH41ujmvYrSgRL0');
         
 $result = json_decode($result);
